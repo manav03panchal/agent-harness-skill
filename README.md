@@ -21,8 +21,7 @@ npx skills add manav03panchal/agent-harness-skill --all -g
 ```
 
 Drop `-g` to install into the current project instead. The project then
-carries the skill for the whole team. The repo is private, so the command
-needs git access to it (SSH key or `gh auth login`).
+carries the skill for the whole team.
 
 Install the companion vetting skill the same way:
 
@@ -38,7 +37,7 @@ load at session start.
 If you want a git checkout you can edit and push from:
 
 ```bash
-git clone git@github.com:manav03panchal/agent-harness-skill.git ~/.agents/skills/harness-engineering
+git clone https://github.com/manav03panchal/agent-harness-skill.git ~/.agents/skills/harness-engineering
 ln -s ../../.agents/skills/harness-engineering ~/.claude/skills/harness-engineering
 ln -s ~/.agents/skills/harness-engineering ~/.codex/skills/harness-engineering
 ```
@@ -62,3 +61,7 @@ Install above).
 - https://openai.com/index/harness-engineering/
 - https://github.com/danyuchn/asd-ste100-skill
 - https://code.claude.com/docs/en/memory
+
+## License
+
+MIT.

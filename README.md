@@ -13,7 +13,29 @@ file.
 
 ## Install
 
-User level, shared by every harness on the machine:
+One command. It installs the skill into every agent on the machine (Claude
+Code, Codex, Cursor, Copilot, Gemini CLI, and others it detects):
+
+```bash
+npx skills add manav03panchal/agent-harness-skill --all -g
+```
+
+Drop `-g` to install into the current project instead. The project then
+carries the skill for the whole team. The repo is private, so the command
+needs git access to it (SSH key or `gh auth login`).
+
+Install the companion vetting skill the same way:
+
+```bash
+npx skills add danyuchn/asd-ste100-skill --all -g
+```
+
+Update both later with `npx skills update`. Restart the harness. Skills
+load at session start.
+
+### Manual install
+
+If you want a git checkout you can edit and push from:
 
 ```bash
 git clone git@github.com:manav03panchal/agent-harness-skill.git ~/.agents/skills/harness-engineering
@@ -21,24 +43,13 @@ ln -s ../../.agents/skills/harness-engineering ~/.claude/skills/harness-engineer
 ln -s ~/.agents/skills/harness-engineering ~/.codex/skills/harness-engineering
 ```
 
-Repository level, shared by the team:
-
-```bash
-git clone git@github.com:manav03panchal/agent-harness-skill.git .agents/skills/harness-engineering
-ln -s ../../.agents/skills/harness-engineering .claude/skills/harness-engineering
-```
-
-Update with `git pull` in the skill directory. Restart the harness. Skills
-load at session start.
+Update with `git pull` in the skill directory.
 
 ## Companion skill
 
-All text in this skill, and all text it produces, follows ASD-STE100. Install
-the vetting skill beside it:
-
-```bash
-git clone https://github.com/danyuchn/asd-ste100-skill ~/.agents/skills/asd-ste100
-```
+All text in this skill, and all text it produces, follows ASD-STE100. The
+`asd-ste100` skill does the vetting. Install it beside this one (see
+Install above).
 
 ## Layout
 

@@ -28,9 +28,12 @@ links before you act. Do not guess.
 - Core beliefs about how we work with agents: `docs/agent-operating-principles.md`
 
 ## Before you change anything
-1. Read the domain doc for the area you will touch.
-2. Check `docs/plans/active/` for a plan that overlaps your task.
-3. For non-trivial work, create an execution plan from `docs/plans/TEMPLATE.md`.
+1. Create a worktree for the task: `git worktree add ../<repo>-<slug> -b <slug>`.
+   Work there. Never edit files on `main`. In Claude Code, the EnterWorktree
+   tool does this in one step.
+2. Read the domain doc for the area you will touch.
+3. Check `docs/plans/active/` for a plan that overlaps your task.
+4. For non-trivial work, create an execution plan from `docs/plans/TEMPLATE.md`.
 
 ## Commands
 - Install dependencies: `<cmd>`

@@ -28,6 +28,13 @@ Keep the logic in a harness-neutral script, for example
 `scripts/gate.sh <file>`. Make each harness hook a one-line call to that
 script. Then every driver gets the same gate and the same messages.
 
+A worked example for rung 4: the worktree rule. The entry file says
+"create a worktree for the task". The hook makes the rule hold. A
+`PreToolUse` hook on `Edit|Write` runs `scripts/guard-branch.sh`. The
+script exits with code 2 when the current branch is `main`. Its stderr
+says: "You are on main. Create a worktree first: git worktree add
+../<repo>-<slug> -b <slug>. Then continue there."
+
 **Claude Code.** Commit `.claude/settings.json` so the team shares it:
 ```json
 {

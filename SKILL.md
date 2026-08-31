@@ -135,8 +135,12 @@ autonomy.
 After throughput, the next bottleneck is human QA. Remove humans from the
 verification path wherever a machine can replace them.
 
-- Make the app bootable per worktree or branch with one command. Isolate
-  ports and databases. Tear the instance down after the task.
+- Require a worktree per task. The entry file states the rule. A hook
+  enforces it: block edits while the session is on `main`
+  (`references/enforcement.md`). Agents then start every task with
+  `git worktree add`, and cleanup is one `git worktree remove`.
+- Make the app bootable per worktree with one command. Isolate ports and
+  databases. Tear the instance down after the task.
 - Expose the UI to the agent through browser automation (CDP, Playwright,
   or `agent-browser`). Add skills for screenshots, DOM snapshots, and
   navigation. Add a skill that records a video of the bug and of the fix.

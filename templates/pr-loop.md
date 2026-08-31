@@ -4,6 +4,9 @@ Run this loop from any harness. Do not stop early. Hand the work to a human
 only at step 7 or when an escalation condition applies.
 
 ## Loop
+0. **Confirm that you are in a task worktree, not on `main`.** If you are
+   on `main`, create a worktree first: `git worktree add ../<repo>-<slug>
+   -b <slug>`. Remove the worktree after the merge.
 1. **Review your own diff.** Compare it with `docs/golden-principles.md`
    and the domain's architecture doc. Fix what you find before anyone else
    sees it. Run the `asd-ste100` skill on every changed doc, lint message,
